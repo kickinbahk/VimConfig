@@ -142,6 +142,18 @@ let mapleader = "\<Space>"
 map <leader>c <Nop>
 vnoremap <leader>c :w !pbcopy<CR><ENTER>
 
+" Leader-t opens new tab
+map <leader>t <Nop>
+noremap <leader>t :tabe<CR>
+
+" Leader-q quits window
+map <leader>q <Nop>
+noremap <leader>q :q<CR>
+
+" Leader-s saves buffer
+map <leader>s <Nop>
+noremap <leader>s :w<CR>
+
 " Go to tab by number
 noremap <leader>1 1gt
 noremap <leader>2 2gt
