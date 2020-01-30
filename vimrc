@@ -10,7 +10,7 @@ if &compatible
   set nocompatible
 endif
 
-" ! Add the dein installation directory into runtimepath
+" Add the dein installation directory into runtimepath
 set runtimepath+=~/.vim/pack/kickinbahk/start/dein.vim
 
 if dein#load_state('~/.vim/pack/kickinbahk/start/dein.vim')
@@ -54,6 +54,8 @@ let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 "
 " CLOSETAG SETTINGS

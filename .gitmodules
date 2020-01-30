@@ -43,3 +43,6 @@
 [submodule "pack/kickinbahk/start/denite.nvim"]
 	path = pack/kickinbahk/start/denite.nvim
 	url = https://github.com/Shougo/denite.nvim.git
+[submodule "pack/kickinbahk/start/indentLine"]
+	path = pack/kickinbahk/start/indentLine
+	url = https://github.com/Yggdroot/indentLine.git
