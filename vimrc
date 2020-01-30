@@ -173,10 +173,6 @@ noremap <leader>0 :tablast<cr>
 " Toggle Highlighting after Search
 nnoremap <silent><expr> <leader>h (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
 
-" Indent/dedent what you just pasted
-nnoremap <leader>< <<
-nnoremap <leader>> >>
-
 " Git Blame
 nnoremap <leader>gb :Gblame<CR>
 
