@@ -5,11 +5,14 @@ set expandtab
 set tw=120
 set autoindent
 
-
 if &compatible
   set nocompatible
 endif
 
+" ------
+" DEIN PLUGIN MANAGER
+" ------
+"
 " Add the dein installation directory into runtimepath
 set runtimepath+=~/.vim/pack/kickinbahk/start/dein.vim
 
@@ -31,19 +34,13 @@ endif
 
 filetype plugin indent on
 
-"Rema esc to Ctrl-c for easier exiting insert mode
-inoremap <C-c> <ESC>
-
-"Remap leader key to spacebar
-nnoremap <SPACE> <Nop>
-let mapleader = "\<Space>"
-
+" ------
+"  SYNTAX HIGHLIGHING & STYLING
+" ------
+"
 if (has("termguicolors$"))
   set termguicolors
 endif
-
-map <leader>c <Nop>
-vnoremap <leader>c :w !pbcopy<CR><ENTER>
 
 syntax enable
 noremap <F12> <Esc>:syntax sync fromstart<CR>
@@ -55,20 +52,95 @@ let &t_ZR="\e[23m"
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 
+
+"==============================
+" PLUGIN SETTINGS
+"==============================
+
+" ------
+" COC SETTINGS
+" ------
+"
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+" ------
+" CLOSETAG SETTINGS
+" ------
+"
+"Set filenames for Closetag plugin
+let g:closetag_filenames = '*.html, *.xhtml, *.phtml, *.liquid, *.js, *.js.liquid'
+
+
+"" Fzf installed using Homebrew
+set rtp+=/usr/local/opt/fzf
+
+" ------
+" PRETTIER SETTINGS
+" ------
+"
+" Prettier custom config
+let g:prettier#config#print_width = 120
+
+" ------ 
+" INDENT LINE SETTINGS
+" ------
+"
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
+" ------
+" DENITE SETTINGS
+" ------
 "
-" CLOSETAG SETTINGS
+silent! call denite#custom#var('file/rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+silent! call denite#custom#option('default', 'prompt', 'λ')
+silent! call denite#custom#var('grep', 'command', ['ag'])
+silent! call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
+silent! call denite#custom#var('grep', 'recursive_opts', [])
+silent! call denite#custom#var('grep', 'pattern_opt', [])
+silent! call denite#custom#var('grep', 'separator', ['--'])
+silent! call denite#custom#var('grep', 'final_opts', [])
+silent! call denite#custom#source('file_rec', 'sorters', ['sorter_sublime'])
+silent! call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
+      \ [ '.git/', '.ropeproject/', '__pycache__/*', '*.pyc', 'node_modules/',
+      \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/', '*.png'])
+
+" ------
+" BETTER COMMENTS SETTINGS
+" ------
 "
+" Better Comments Language mapping
+let g:bettercomments_language_aliases = { 'javascript': 'js' }
 
-"Set filenames for Closetag plugin
-let g:closetag_filenames = '*.html, *.xhtml, *.phtml, *.liquid'
+" Better Comments Highlighting
+hi ErrorBetterComments guifg=#ff0000 ctermfg=196 gui=italic cterm=italic
+hi HighlightBetterComments guifg=#afff00 ctermfg=154 gui=italic cterm=italic
+hi QuestionBetterComments guifg=#005fff ctermfg=27 gui=italic cterm=italic
+hi TodoBetterComments guifg=#af8700 ctermfg=136 gui=italic cterm=italic
+hi StrikeoutBetterComments guifg=#5fafd7 ctermfg=74 gui=italic cterm=italic
 
-" Shortcut for closing tags, default is '>'
-let g:closetag_shortcut = '>'
 
-" Add > at current position without closing the current tag, default is ''
-let g:closetag_close_shortcut = '<leader>>'
+"==============================
+" KEY MAPPINGS
+"==============================
+
+" ------
+" LEADER KEYMAPPINGS
+" ------
+"
+" Remap esc to Ctrl-c for easier exiting insert mode
+inoremap <C-c> <ESC>
+
+" Remap leader key to spacebar
+nnoremap <SPACE> <Nop>
+let mapleader = "\<Space>"
+
+" Leader-c copies to clipboard
+map <leader>c <Nop>
+vnoremap <leader>c :w !pbcopy<CR><ENTER>
 
 " Go to tab by number
 noremap <leader>1 1gt
@@ -85,34 +157,37 @@ noremap <leader>0 :tablast<cr>
 " Toggle Highlighting after Search
 nnoremap <silent><expr> <leader>h (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
 
-" Prettier custom config
-let g:prettier#config#print_width = 120
+" ------
+"  COC KEYBINDINGS
+" ------
+" Use Tab for trigger completion
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
 
-"" Fzf installed using Homebrew
-set rtp+=/usr/local/opt/fzf
+" Use <Tab> and <S-Tab> to navigate the completion list
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-silent! call denite#custom#var('file/rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
-silent! call denite#custom#option('default', 'prompt', 'λ')
-silent! call denite#custom#var('grep', 'command', ['ag'])
-silent! call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
-silent! call denite#custom#var('grep', 'recursive_opts', [])
-silent! call denite#custom#var('grep', 'pattern_opt', [])
-silent! call denite#custom#var('grep', 'separator', ['--'])
-silent! call denite#custom#var('grep', 'final_opts', [])
-silent! call denite#custom#source('file_rec', 'sorters', ['sorter_sublime'])
-silent! call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
-      \ [ '.git/', '.ropeproject/', '__pycache__/*', '*.pyc', 'node_modules/',
-      \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/', '*.png'])
+" Use <cr> to confirm completion
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+" ------
+" CLOSETAG PLUGIN KEYBINDINGS
+" ------
+"
+" Shortcut for closing tags, default is '>'
+let g:closetag_shortcut = '>'
+
+" Add > at current position without closing the current tag, default is ''
+let g:closetag_close_shortcut = '<leader>>'
+
+" ------
+" DENITE PLUGIN KEYBINDINGS
+" ------ 
+"
 nmap <leader>d :Denite -start-filter file/rec<CR>
 nmap <leader>b :Denite buffer<CR>
 nnoremap <leader>g :Denite grep<CR>
 
-" Better Comments Language mapping
-let g:bettercomments_language_aliases = { 'javascript': 'js' }
-
-hi ErrorBetterComments guifg=#ff0000 ctermfg=196 gui=italic cterm=italic
-hi HighlightBetterComments guifg=#afff00 ctermfg=154 gui=italic cterm=italic
-hi QuestionBetterComments guifg=#005fff ctermfg=27 gui=italic cterm=italic
-hi TodoBetterComments guifg=#af8700 ctermfg=136 gui=italic cterm=italic
-hi StrikeoutBetterComments guifg=#5fafd7 ctermfg=74 gui=italic cterm=italic
