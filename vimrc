@@ -131,20 +131,36 @@ hi StrikeoutBetterComments guifg=#5fafd7 ctermfg=74 gui=italic cterm=italic
 nnoremap H ^
 nnoremap L $
 
+" Remap esc to Ctrl-c and kj for easier exiting insert mode
+inoremap <C-c> <ESC>
+imap kj <ESC>
+
 " ------
 " LEADER KEYMAPPINGS
 " ------
 "
-" Remap esc to Ctrl-c for easier exiting insert mode
-inoremap <C-c> <ESC>
-
 " Remap leader key to spacebar
 nnoremap <SPACE> <Nop>
 let mapleader = "\<Space>"
 
+" Vsplit edit vimrc file
+nmap <leader>vr :vsplit ~/.vim/vimrc<CR>
+
+" Source (reload) vimrc file
+nmap <leader>so :source ~/.vim/vimrc<CR>
+
+" Pre-populate a split command with the current directory
+nmap <leader>vs :vnew <C-r>=escape(expand("%:p:h"), ' ') . '/'<cr>
+
+" Pre-populate a tab command with the current directory
+nmap <leader>nt :tabe <C-r>=escape(expand("%:p:h"), ' ') . '/'<cr>
+
 " Leader-c copies to clipboard
 map <leader>c <Nop>
 vnoremap <leader>c :w !pbcopy<CR><ENTER>
+
+" Copy the entire buffer into the system register
+nmap <leader>co ggVG*y
 
 " Leader-t opens new tab
 map <leader>t <Nop>
