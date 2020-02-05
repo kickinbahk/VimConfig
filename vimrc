@@ -168,11 +168,11 @@ noremap <leader>t :tabe<CR>
 
 " Leader-q quits window
 map <leader>q <Nop>
-noremap <leader>q :q<CR>
+noremap <leader>qq :q<CR>
 
 " Leader-s saves buffer
-map <leader>s <Nop>
-noremap <leader>s :w<CR>
+map <leader>w <Nop>
+noremap <leader>w :w<CR>
 
 " Go to tab by number
 noremap <leader>1 1gt
