@@ -4,10 +4,65 @@ set shiftwidth=2
 set expandtab
 set tw=120
 set autoindent
+set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
+set lazyredraw " Don't redraw screen when running macros.
+set history=500		" keep 500 lines of command line history
+set ruler		" show the cursor position all the time
+set nobackup
+set nowritebackup
+set noswapfile
+set formatoptions-=t " Don't auto-break long lines (re-enable this for prose)
+set laststatus=2     " Always display the status line
+set hidden " Don't require saving before closing a buffer
+
+" Ignore whitespace only changes in diff, always use vertical diffs
+set diffopt+=iwhite
+set diffopt+=vertical
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
 
 if &compatible
   set nocompatible
 endif
+
+" Treat <li> and <p> tags like the block tags they are
+let g:html_indent_tags = 'li\|p'
+
+" Don't wait so long for the next keypress (particularly in ambigious Leader
+" situations.
+set timeoutlen=500
+
+" Without this, vim breaks in the middle of words when wrapping
+autocmd FileType markdown setlocal nolist wrap lbr
+
+" Don't automatically continue comments after newline
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
+
+" ------
+"  Project Notes
+" ------
+"
+" Quick access to a local notes file for keeping track of things in a given
+" project. Add `.project-notes` to global ~/.gitignore
+
+let s:PROJECT_NOTES_FILE = '.project-notes'
+
+command! EditProjectNotes call <sid>SmartSplit(s:PROJECT_NOTES_FILE)
+nnoremap <leader>ep :EditProjectNotes<cr>
+
+autocmd BufEnter .project-notes call <sid>LoadNotes()
+
+function! s:SmartSplit(file)
+  let split_cmd = (winwidth(0) >= 100) ? 'vsplit' : 'split'
+  execute split_cmd . " " . a:file
+endfunction
+
+function! s:LoadNotes()
+  setlocal filetype=markdown
+  nnoremap <buffer> q :wq<cr>
+endfunction
 
 " ------
 " DEIN PLUGIN MANAGER
@@ -52,6 +107,12 @@ let &t_ZR="\e[23m"
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 
+" Make it more obviouser when lines are too long
+highlight ColorColumn ctermbg=235
+
+" Make it obvious where 80 characters is
+set textwidth=120
+set colorcolumn=+1
 
 "==============================
 " PLUGIN SETTINGS
@@ -77,6 +138,15 @@ let g:closetag_filenames = '*.html, *.xhtml, *.phtml, *.liquid, *.js, *.js.liqui
 
 "" Fzf installed using Homebrew
 set rtp+=/usr/local/opt/fzf
+
+
+" ------
+" Ctrl-P
+" ------
+"
+" Make CtrlP use ag for listing the files. Way faster and no useless files.
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_use_caching = 1
 
 " ------
 " PRETTIER SETTINGS
