@@ -2,7 +2,7 @@ set number
 set tabstop=2
 set shiftwidth=2
 set expandtab
-set tw=120
+set tw=80
 set autoindent
 set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
 set lazyredraw " Don't redraw screen when running macros.
@@ -32,7 +32,7 @@ let g:html_indent_tags = 'li\|p'
 
 " Don't wait so long for the next keypress (particularly in ambigious Leader
 " situations.
-set timeoutlen=500
+set timeoutlen=1000
 
 " Without this, vim breaks in the middle of words when wrapping
 autocmd FileType markdown setlocal nolist wrap lbr
@@ -97,6 +97,7 @@ if (has("termguicolors$"))
   set termguicolors
 endif
 
+set rtp+=/home/.vim/after/ftdetect/liquid.vim
 syntax enable
 noremap <F12> <Esc>:syntax sync fromstart<CR>
 inoremap <F12> <C-o>:syntax sync fromstart<CR>
@@ -111,7 +112,7 @@ let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 highlight ColorColumn ctermbg=235
 
 " Make it obvious where 80 characters is
-set textwidth=120
+set textwidth=80
 set colorcolumn=+1
 
 "==============================
@@ -128,6 +129,9 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
+" Setup Prettier
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+
 " ------
 " CLOSETAG SETTINGS
 " ------
@@ -139,6 +143,13 @@ let g:closetag_filenames = '*.html, *.xhtml, *.phtml, *.liquid, *.js, *.js.liqui
 "" Fzf installed using Homebrew
 set rtp+=/usr/local/opt/fzf
 
+
+" ------
+" CLOSETAG SETTINGS
+" ------
+"
+" To ensure that this plugin works well with Tim Pope's fugitive
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " ------
 " Ctrl-P
@@ -243,6 +254,12 @@ noremap <leader>qq :q<CR>
 " Leader-s saves buffer
 map <leader>w <Nop>
 noremap <leader>w :w<CR>
+
+" Leader-s changes filetype to javascript
+noremap <leader>js :set filetype=javascript<CR>
+
+" Leader-s changes filetype to scss
+noremap <leader>scss :set filetype=scss<CR>
 
 " Go to tab by number
 noremap <leader>1 1gt
