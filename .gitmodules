@@ -1,3 +1,6 @@
 [submodule "pack/kickinbahk/start/dein.vim"]
 	path = pack/kickinbahk/start/dein.vim
 	url = https://github.com/Shougo/dein.vim.git
+[submodule "pack/kickinbahk/start/night-owl.vim"]
+	path = pack/kickinbahk/start/night-owl.vim
+	url = git@github.com:kickinbahk/night-owl.vim.git
