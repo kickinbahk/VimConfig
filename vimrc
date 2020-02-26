@@ -69,14 +69,14 @@ endfunction
 " ------
 "
 " Add the dein installation directory into runtimepath
-set runtimepath+=~/.vim/pack/kickinbahk/start/dein.vim
+set runtimepath+=~/VimConfig/pack/kickinbahk/start/dein.vim
 
-if dein#load_state('~/.vim/pack/kickinbahk/start/dein.vim')
-  call dein#begin('~/.vim/pack/kickinbahk/start/dein.vim')
+if dein#load_state('~/VimConfig/pack/kickinbahk/start/dein.vim')
+  call dein#begin('~/VimConfig/pack/kickinbahk/start/dein.vim')
 
-  call dein#add('~/.vim/pack/kickinbahk/start/dein.vim')
-  call dein#add('~/.vim/pack/kickinbahk/start/deoplete.nvim')
-  call dein#add('~/.vim/pack/kickinbahk/start/coc.nvim', {'merged':0, 'rev': 'release'})
+  call dein#add('~/VimConfig/pack/kickinbahk/start/dein.vim')
+  call dein#add('~/VimConfig/pack/kickinbahk/start/deoplete.nvim')
+  call dein#add('~/VimConfig/pack/kickinbahk/start/coc.nvim', {'merged':0, 'rev': 'release'})
   
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
@@ -97,7 +97,7 @@ if (has("termguicolors$"))
   set termguicolors
 endif
 
-set rtp+=/home/.vim/after/ftdetect/liquid.vim
+set rtp+=/home/VimConfig/after/ftdetect/liquid.vim
 syntax enable
 noremap <F12> <Esc>:syntax sync fromstart<CR>
 inoremap <F12> <C-o>:syntax sync fromstart<CR>
@@ -225,10 +225,10 @@ nnoremap <SPACE> <Nop>
 let mapleader = "\<Space>"
 
 " Vsplit edit vimrc file
-nmap <leader>vr :vsplit ~/.vim/vimrc<CR>
+nmap <leader>vr :vsplit ~/VimConfig/vimrc<CR>
 
 " Source (reload) vimrc file
-nmap <leader>so :source ~/.vim/vimrc<CR>
+nmap <leader>so :source ~/VimConfig/vimrc<CR>
 
 " Pre-populate a split command with the current directory
 nmap <leader>vs :vnew <C-r>=escape(expand("%:p:h"), ' ') . '/'<cr>

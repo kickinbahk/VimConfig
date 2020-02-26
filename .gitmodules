@@ -7,9 +7,6 @@
 [submodule "pack/kickinbahk/start/coc.nvim"]
 	path = pack/kickinbahk/start/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
-[submodule "pack/kickinbahk/start/night-owl.vim"]
-	path = pack/kickinbahk/start/night-owl.vim
-	url = https://github.com/haishanh/night-owl.vim.git
 [submodule "pack/kickinbahk/start/vim-surround"]
 	path = pack/kickinbahk/start/vim-surround
 	url = https://github.com/tpope/vim-surround.git
