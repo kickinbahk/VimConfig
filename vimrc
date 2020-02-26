@@ -69,14 +69,14 @@ endfunction
 " ------
 "
 " Add the dein installation directory into runtimepath
-set runtimepath+=~/VimConfig/pack/kickinbahk/start/dein.vim
+set runtimepath+=~/.vim/pack/kickinbahk/start/dein.vim
 
-if dein#load_state('~/VimConfig/pack/kickinbahk/start/dein.vim')
-  call dein#begin('~/VimConfig/pack/kickinbahk/start/dein.vim')
+if dein#load_state('~/.vim/pack/kickinbahk/start/dein.vim')
+  call dein#begin('~/.vim/pack/kickinbahk/start/dein.vim')
 
-  call dein#add('~/VimConfig/pack/kickinbahk/start/dein.vim')
-  call dein#add('~/VimConfig/pack/kickinbahk/start/deoplete.nvim')
-  call dein#add('~/VimConfig/pack/kickinbahk/start/coc.nvim', {'merged':0, 'rev': 'release'})
+  call dein#add('~/.vim/pack/kickinbahk/start/dein.vim')
+  call dein#add('~/.vim/pack/kickinbahk/start/deoplete.nvim')
+  call dein#add('~/.vim/pack/kickinbahk/start/coc.nvim', {'merged':0, 'rev': 'release'})
   
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
