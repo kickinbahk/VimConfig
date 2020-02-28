@@ -97,6 +97,9 @@ if (has("termguicolors$"))
   set termguicolors
 endif
 
+" For Neovim 0.1.3 and 0.1.4
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
 set rtp+=/home/VimConfig/after/ftdetect/liquid.vim
 syntax enable
 noremap <F12> <Esc>:syntax sync fromstart<CR>
@@ -309,7 +312,8 @@ let g:closetag_close_shortcut = '<leader>>'
 " DENITE PLUGIN KEYBINDINGS
 " ------ 
 "
-nmap <leader>d :Denite -start-filter file/rec<CR>
+nmap <leader>ff :Denite -start-filter file/rec<CR>
+nmap <leader>fw :DeniteCursorWord  -start-filter file/rec<CR>
 nmap <leader>b :Denite buffer<CR>
 nnoremap <leader>g :Denite grep<CR>
 

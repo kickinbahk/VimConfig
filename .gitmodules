@@ -4,3 +4,51 @@
 [submodule "pack/kickinbahk/start/night-owl.vim"]
 	path = pack/kickinbahk/start/night-owl.vim
 	url = git@github.com:kickinbahk/night-owl.vim.git
+[submodule "pack/kickinbahk/start/vim-numbertoggle"]
+	path = pack/kickinbahk/start/vim-numbertoggle
+	url = git@github.com:jeffkreeftmeijer/vim-numbertoggle.git
+[submodule "pack/kickinbahk/start/vim-surround"]
+	path = pack/kickinbahk/start/vim-surround
+	url = git@github.com:tpope/vim-surround.git
+[submodule "pack/kickinbahk/start/auto-pairs"]
+	path = pack/kickinbahk/start/auto-pairs
+	url = git@github.com:jiangmiao/auto-pairs.git
+[submodule "pack/kickinbahk/start/vim-better-comments"]
+	path = pack/kickinbahk/start/vim-better-comments
+	url = git@github.com:jbgutierrez/vim-better-comments.git
+[submodule "pack/kickinbahk/start/vim-commentary"]
+	path = pack/kickinbahk/start/vim-commentary
+	url = git@github.com:tpope/vim-commentary.git
+[submodule "pack/kickinbahk/start/vim-closetag"]
+	path = pack/kickinbahk/start/vim-closetag
+	url = git@github.com:alvan/vim-closetag.git
+[submodule "pack/kickinbahk/start/ReplaceWithRegister"]
+	path = pack/kickinbahk/start/ReplaceWithRegister
+	url = git@github.com:vim-scripts/ReplaceWithRegister.git
+[submodule "pack/kickinbahk/start/editorconfig-vim"]
+	path = pack/kickinbahk/start/editorconfig-vim
+	url = git@github.com:editorconfig/editorconfig-vim.git
+[submodule "pack/kickinbahk/start/indentLine"]
+	path = pack/kickinbahk/start/indentLine
+	url = git@github.com:Yggdroot/indentLine.git
+[submodule "pack/kickinbahk/start/vim-eunuch"]
+	path = pack/kickinbahk/start/vim-eunuch
+	url = git@github.com:tpope/vim-eunuch.git
+[submodule "pack/kickinbahk/start/vim-textobj-entire"]
+	path = pack/kickinbahk/start/vim-textobj-entire
+	url = git@github.com:kana/vim-textobj-entire.git
+[submodule "pack/kickinbahk/start/vim-exchange"]
+	path = pack/kickinbahk/start/vim-exchange
+	url = git@github.com:tommcdo/vim-exchange.git
+[submodule "pack/kickinbahk/start/vim-textobj-indent"]
+	path = pack/kickinbahk/start/vim-textobj-indent
+	url = git@github.com:kana/vim-textobj-indent.git
+[submodule "pack/kickinbahk/start/vim-textobj-line"]
+	path = pack/kickinbahk/start/vim-textobj-line
+	url = git@github.com:kana/vim-textobj-line.git
+[submodule "pack/kickinbahk/start/vim-textobj-user"]
+	path = pack/kickinbahk/start/vim-textobj-user
+	url = git@github.com:kana/vim-textobj-user.git
+[submodule "pack/kickinbahk/start/denite.nvim"]
+	path = pack/kickinbahk/start/denite.nvim
+	url = git@github.com:Shougo/denite.nvim.git
