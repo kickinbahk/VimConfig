@@ -52,3 +52,18 @@
 [submodule "pack/kickinbahk/start/denite.nvim"]
 	path = pack/kickinbahk/start/denite.nvim
 	url = git@github.com:Shougo/denite.nvim.git
+[submodule "pack/kickinbahk/start/coc.nvim"]
+	path = pack/kickinbahk/start/coc.nvim
+	url = git@github.com:neoclide/coc.nvim.git
+[submodule "pack/kickinbahk/start/vim-liquid"]
+	path = pack/kickinbahk/start/vim-liquid
+	url = git@github.com:tpope/vim-liquid.git
+[submodule "pack/kickinbahk/start/vim-css-color"]
+	path = pack/kickinbahk/start/vim-css-color
+	url = git@github.com:skammer/vim-css-color.git
+[submodule "pack/kickinbahk/start/vim-repeat"]
+	path = pack/kickinbahk/start/vim-repeat
+	url = git@github.com:tpope/vim-repeat.git
+[submodule "pack/kickinbahk/start/vim-javascript"]
+	path = pack/kickinbahk/start/vim-javascript
+	url = git@github.com:pangloss/vim-javascript.git

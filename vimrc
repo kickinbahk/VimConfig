@@ -76,7 +76,7 @@ if dein#load_state('~/.vim/pack/kickinbahk/start/dein.vim')
 
   call dein#add('~/.vim/pack/kickinbahk/start/dein.vim')
   call dein#add('~/.vim/pack/kickinbahk/start/deoplete.nvim')
-  call dein#add('~/.vim/pack/kickinbahk/start/coc.nvim', {'merged':0, 'rev': 'release'})
+  call dein#add('~/.vim/pack/kickinbahk/start/coc.nvim', {'merged':0, 'build': 'yarn install --frozen-lockfile'})
   
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
