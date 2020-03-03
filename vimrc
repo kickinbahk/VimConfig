@@ -132,9 +132,6 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
-" Setup Prettier
-command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
-
 " ------
 " CLOSETAG SETTINGS
 " ------
@@ -167,7 +164,7 @@ let g:ctrlp_use_caching = 1
 " ------
 "
 " Prettier custom config
-let g:prettier#config#print_width = 120
+let g:prettier#config#print_width = 80
 
 " ------ 
 " INDENT LINE SETTINGS
