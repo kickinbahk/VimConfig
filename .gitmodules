@@ -73,3 +73,6 @@
 [submodule "pack/kickinbahk/start/night-owl.vim"]
 	path = pack/kickinbahk/start/night-owl.vim
 	url = git@github.com:kickinbahk/night-owl.vim.git
+[submodule "pack/kickinbahk/start/nerdtree"]
+	path = pack/kickinbahk/start/nerdtree
+	url = git@github.com:preservim/nerdtree.git

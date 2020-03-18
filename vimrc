@@ -123,9 +123,24 @@ set colorcolumn=+1
 "==============================
 
 " ------
+" NETRW SETTINGS 
+" ------
+"
+" Setup Netrw to work similar to NERDTree
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 2
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+
+" ------
 " COC SETTINGS
 " ------
 "
+" Always use version 12 of node even if needing to roll back to older versions
+" for project
+let g:coc_node_path = '/Users/josiahmory/.nvm/versions/node/v12.16.1/bin/node'
+
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
   let col = col('.') - 1
