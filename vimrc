@@ -240,7 +240,7 @@ nnoremap <SPACE> <Nop>
 let mapleader = "\<Space>"
 
 " Vsplit edit vimrc file
-nmap <leader>vr :vsplit ~/VimConfig/vimrc<CR>
+nmap <leader>vr :vsplit ~/.vim/vimrc<CR>
 
 " Source (reload) vimrc file
 nmap <leader>so :source ~/VimConfig/vimrc<CR>
