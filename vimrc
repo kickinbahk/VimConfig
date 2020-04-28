@@ -77,7 +77,7 @@ if dein#load_state('~/.vim/pack/kickinbahk/start/dein.vim')
   call dein#add('~/.vim/pack/kickinbahk/start/dein.vim')
   call dein#add('~/.vim/pack/kickinbahk/start/deoplete.nvim')
   call dein#add('~/.vim/pack/kickinbahk/start/coc.nvim', {'merged':0, 'build': 'yarn install --frozen-lockfile'})
-  
+
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
     call dein#add('roxma/vim-hug-neovim-rpc')
@@ -93,18 +93,24 @@ filetype plugin indent on
 "  SYNTAX HIGHLIGHING & STYLING
 " ------
 "
-if (has("termguicolors$"))
-  set termguicolors
-endif
+
+set termguicolors
 
 " For Neovim 0.1.3 and 0.1.4
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"
+" Italics for my favorite color scheme
+let g:palenight_terminal_italics=1
 
 set rtp+=/home/VimConfig/after/ftdetect/liquid.vim
 syntax enable
+set background=dark
 noremap <F12> <Esc>:syntax sync fromstart<CR>
 inoremap <F12> <C-o>:syntax sync fromstart<CR>
+packadd! palenight.vim
+
 colorscheme night-owl
+
 
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"

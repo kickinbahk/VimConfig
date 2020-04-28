@@ -79,3 +79,24 @@
 [submodule "pack/kickinbahk/start/vim-vue"]
 	path = pack/kickinbahk/start/vim-vue
 	url = git@github.com:posva/vim-vue.git
+[submodule "pack/kickinbahk/start/foo"]
+	path = pack/kickinbahk/start/foo
+	url = git@github.com:victorze/foo.git
+[submodule "pack/kickinbahk/start/quantum.vim"]
+	path = pack/kickinbahk/start/quantum.vim
+	url = git@github.com:kjssad/quantum.vim.git
+[submodule "pack/kickinbahk/start/purify"]
+	path = pack/kickinbahk/start/purify
+	url = git@github.com:kyoz/purify.git
+[submodule "pack/kickinbahk/start/palenight.vim"]
+	path = pack/kickinbahk/start/palenight.vim
+	url = git@github.com:drewtempelmeyer/palenight.vim.git
+[submodule "pack/kickinbahk/start/ayu-vim"]
+	path = pack/kickinbahk/start/ayu-vim
+	url = git@github.com:ayu-theme/ayu-vim.git
+[submodule "pack/kickinbahk/palenight.vim"]
+	path = pack/kickinbahk/palenight.vim
+	url = git@github.com:drewtempelmeyer/palenight.vim.git
+[submodule "pack/kickinbahk/opt/palenight.vim"]
+	path = pack/kickinbahk/opt/palenight.vim
+	url = git@github.com:drewtempelmeyer/palenight.vim.git
