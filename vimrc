@@ -15,6 +15,13 @@ set formatoptions-=t " Don't auto-break long lines (re-enable this for prose)
 set laststatus=2     " Always display the status line
 set hidden " Don't require saving before closing a buffer
 
+" turn hybrid line numbers on
+:set number relativenumber
+:set nu rnu
+
+set visualbell
+set noerrorbells
+
 " Ignore whitespace only changes in diff, always use vertical diffs
 set diffopt+=iwhite
 set diffopt+=vertical
